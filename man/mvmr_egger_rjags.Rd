@@ -62,7 +62,7 @@ An object of class \code{mveggerjags} containing the following components:
 Bayesian implementation of the MVMR-Egger model with choice of prior distributions fitted using JAGS.
 }
 \examples{
-
+\dontrun{
 dat <- mvmr_format(rsid = dodata$rsid,
          xbeta = cbind(dodata$ldlcbeta,dodata$hdlcbeta,dodata$tgbeta),
          ybeta = dodata$chdbeta,
@@ -76,6 +76,7 @@ plot(fit$samples)
 fitdf <- do.call(rbind.data.frame, fit$samples)
 cri90 <- sapply(fitdf, quantile, probs = c(0.05, 0.95))
 print(cri90)
+}
 
 }
 \references{
